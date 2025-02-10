@@ -6,6 +6,9 @@ public class playerAim : MonoBehaviour
 {
     [Header("Layers")]
     public LayerMask groundLayer;
+    public Ray ray;
+
+    public RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +19,9 @@ public class playerAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
-
-            RaycastHit hit;
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);            
 
             if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
             {

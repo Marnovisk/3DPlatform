@@ -11,10 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private NavMeshAgent nav;
 
+    private playerAim aim;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
         nav = GetComponent<NavMeshAgent>();
+        aim = GetComponent<playerAim>();
+        nav.updateRotation = false;
     }
 
     private void Update()
@@ -33,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
+    {        
         nav.SetDestination(direction);
+        Vector3 LookAt = aim.hit.point - transform.position;
+        transform.rotation = Quaternion.LookRotation(LookAt);
     }
 }
