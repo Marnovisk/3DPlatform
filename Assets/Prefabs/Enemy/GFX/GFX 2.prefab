@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85c8812a0be458a40b343a70c7bf5b64, type: 2}
+  - {fileID: 2100000, guid: 0e0f00ff28ed3344ca4dc14ad0196f7f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 7592991085340519343}
   - component: {fileID: 2907439510971984682}
   m_Layer: 0
-  m_Name: GFX
+  m_Name: GFX 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: addf78a38cfb6854b912d71376a51a22, type: 2}
+  - {fileID: 2100000, guid: 630a534dfee901c468ab683e52b89130, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerAttacks : MonoBehaviour
 {
-    private Rigidbody rb;
+    //private Rigidbody rb;
     private Ray ray;
 
     public LayerMask EnemyLayer;
@@ -12,7 +12,7 @@ public class playerAttacks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class playerAttacks : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            ray = new Ray(rb.position, transform.forward);
+            ray = new Ray(this.transform.position, transform.forward);
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit , 5.0f))

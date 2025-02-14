@@ -20,7 +20,7 @@ public class IAController : MonoBehaviour
     private IAMovement IAMovimentScript;
     private IAKombat IAKombatScript;
     private CharacterStatusManager IAStatusManager;
-    private DamageHandler IADamegeHandler;
+    //private DamageHandler IADamegeHandler;
 
     [Header("References Check")]
     [SerializeField] private bool referencesOK;
@@ -38,7 +38,7 @@ public class IAController : MonoBehaviour
         IAMovimentScript = GetComponent<IAMovement>();
         IAKombatScript = GetComponent<IAKombat>();
         IAStatusManager = GetComponent<CharacterStatusManager>();
-        IADamegeHandler = GetComponent<DamageHandler>();
+        //IADamegeHandler = GetComponent<DamageHandler>();
 
         brain = pBrain;
         
@@ -49,7 +49,7 @@ public class IAController : MonoBehaviour
         InstantiateGraphics(); 
         FindPlayerReference();
 
-        IADamegeHandler.Init();
+        //IADamegeHandler.Init();
 
         referencesOK = true;
     }
@@ -90,6 +90,7 @@ public class IAController : MonoBehaviour
     void AttackBehavior()
     {
         var sucess = IAKombatScript.checkAndAttack(playerTransform);
+        
 
         if(sucess == false)
         {
@@ -99,7 +100,7 @@ public class IAController : MonoBehaviour
 
     void InstantiateGraphics()
     {
-        var gfx = Instantiate(brain.GFX, this.transform);
+        var gfx = Instantiate(brain.GFX, GFXTransform);
         gfx.transform.parent = this.transform; 
     }
 

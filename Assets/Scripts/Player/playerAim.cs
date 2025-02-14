@@ -27,7 +27,7 @@ public class playerAim : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Ground"))
                 {
-                    Debug.Log(hit.point);
+                    //Debug.Log(hit.point);
                 }
             }
         

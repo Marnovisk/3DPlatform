@@ -37,7 +37,7 @@ public class DamageHandler : MonoBehaviour
    {
         Debug.Log("Se desinscrevendo");
 
-        StatusScript.OnTakeDamage -= BlinkMAterial;
+        //StatusScript.OnTakeDamage -= BlinkMAterial;
    }
 
    private void OnDestroy()
