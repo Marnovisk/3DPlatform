@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb519dfc929b7e48aab358999d0c76f, type: 3}
+  m_Script: {fileID: 11500000, guid: ce7e4ecc837957044882705353749ac2, type: 3}
   m_Name: Inimigo2
   m_EditorClassIdentifier: 
   Status:
-    Health: 200
-    Armor: 20
-    MagicResist: 15
-  speed: 3
-  AttackRange: 2
-  AttackSpeed: 3
-  AttackDamage: 0f00000014000000
-  GFX: {fileID: 4737539376364554987, guid: a3610a4e71ac52942a448fac310543b6, type: 3}
+    Health: 0
+    Armor: 0
+    MagicResist: 0
+  speed: 0
+  AttackRange: 0
+  AttackSpeed: 0
+  AttackDamage: 
+  GFX: {fileID: 0}
