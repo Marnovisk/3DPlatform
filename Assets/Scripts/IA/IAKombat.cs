@@ -20,18 +20,15 @@ public class IAKombat : MonoBehaviour
         brain = pBrain;
         nav = GetComponent<NavMeshAgent>();
         nav.stoppingDistance = brain.AttackRange;
-        Debug.Log("At init");
     }
    public bool checkAndAttack(Transform target)
     {
-        Debug.Log("Attack");
         CooldownRecovery();
         if(Vector3.Distance(this.transform.position, target.transform.position) <= brain.AttackRange){
             
              if(canAttack)
             {
                 Attack(target);
-                Debug.Log("Attack s");
             }
 
             return true;
