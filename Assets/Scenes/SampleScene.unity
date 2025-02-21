@@ -755,7 +755,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &911331215
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesBrains:
+  - {fileID: 11400000, guid: 4b66564fb29615948bfc03d26f0ee974, type: 2}
   - {fileID: 11400000, guid: df5e182a6490da949b567af4d5475ae8, type: 2}
+  - {fileID: 11400000, guid: d5e046d0cbdbfc740aef70b73a7fc0fa, type: 2}
+  - {fileID: 11400000, guid: ccd1825a869f94c49a4e7e30c4bcadce, type: 2}
   EnemyPrefab: {fileID: 4793362016832274234, guid: c8b1549ab8f0e3a4db4ad3e8638a8324, type: 3}
 --- !u!4 &918740806 stripped
 Transform:
@@ -1363,7 +1366,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesBrains:
+  - {fileID: 11400000, guid: 4b66564fb29615948bfc03d26f0ee974, type: 2}
   - {fileID: 11400000, guid: df5e182a6490da949b567af4d5475ae8, type: 2}
+  - {fileID: 11400000, guid: d5e046d0cbdbfc740aef70b73a7fc0fa, type: 2}
+  - {fileID: 11400000, guid: ccd1825a869f94c49a4e7e30c4bcadce, type: 2}
   EnemyPrefab: {fileID: 4793362016832274234, guid: c8b1549ab8f0e3a4db4ad3e8638a8324, type: 3}
 --- !u!1 &1777000484
 GameObject:
