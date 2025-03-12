@@ -18,6 +18,6 @@ MonoBehaviour:
     MagicResist: 5
   speed: 3
   AttackRange: 5
-  AttackSpeed: 2
-  AttackDamage: 050000000f000000
+  AttackSpeed: 3
+  AttackDamage: 0100000005000000
   GFX: {fileID: 4737539376364554987, guid: 0e17bad1d041b744aac06c5204748d8c, type: 3}
