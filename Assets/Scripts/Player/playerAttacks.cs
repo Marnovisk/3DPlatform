@@ -84,8 +84,15 @@ public class playerAttacks : MonoBehaviour
 
     public void UseAreaWeapon()
     {
-        var projectile = Instantiate(Weapons[1].proj, aim.hit.point, Quaternion.LookRotation(this.transform.forward, this.transform.up)); 
-        Destroy(projectile, 10f);       
+        float Cooldown = Weapons[1].AttackSpeed;
+        float currentCooldown = 0;
+        Debug.Log(Time.time);
+        if(Time.time >= Cooldown + currentCooldown)
+        {
+            var projectile = Instantiate(Weapons[1].proj, aim.hit.point, Quaternion.LookRotation(this.transform.forward, this.transform.up)); 
+            currentCooldown = Time.time;
+            Destroy(projectile, 10f);
+        }       
     }
 
     public void UseTornadoWeapon()
