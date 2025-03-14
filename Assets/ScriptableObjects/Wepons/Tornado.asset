@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Range: 0
-  AttackSpeed: 0
+  AttackSpeed: 3
   projectileSpeed: 5
   currentCooldown: 0
   proj: {fileID: 4252063577038739218, guid: f903766fdf48e6649ac9cc7172559822, type: 3}

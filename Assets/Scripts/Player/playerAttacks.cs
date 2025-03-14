@@ -6,6 +6,11 @@ using UnityEngine;
 public class playerAttacks : MonoBehaviour
 {
     //private Rigidbody rb;
+
+    float areacurrentCooldown = 0;
+    float tornadoCurrentCooldown = 0;
+    float shootCurrentCooldown = 0;
+
     private Ray ray;
     private List<GameObject> enemyList;
 
@@ -78,27 +83,36 @@ public class playerAttacks : MonoBehaviour
 
     public void UseshootWeapon()
     {
-        var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
-        Destroy(projectile, 10f);        
+        float Cooldown = Weapons[0].AttackSpeed;
+        if(Time.time >= Cooldown + shootCurrentCooldown)
+        {
+            Debug.Log(Time.time);
+           shootCurrentCooldown = Time.time;
+            var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
+            Destroy(projectile, 10f);  
+        }      
     }
 
     public void UseAreaWeapon()
     {
         float Cooldown = Weapons[1].AttackSpeed;
-        float currentCooldown = 0;
-        Debug.Log(Time.time);
-        if(Time.time >= Cooldown + currentCooldown)
+        if(Time.time >= Cooldown + areacurrentCooldown)
         {
+            areacurrentCooldown = Time.time;
             var projectile = Instantiate(Weapons[1].proj, aim.hit.point, Quaternion.LookRotation(this.transform.forward, this.transform.up)); 
-            currentCooldown = Time.time;
             Destroy(projectile, 10f);
         }       
     }
 
     public void UseTornadoWeapon()
     {
-        var projectile = Instantiate(Weapons[2].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
-        Destroy(projectile, 10f);        
+        float Cooldown = Weapons[2].AttackSpeed;
+        if(Time.time >= Cooldown + tornadoCurrentCooldown)
+        {
+            tornadoCurrentCooldown = Time.time;
+            var projectile = Instantiate(Weapons[2].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
+            Destroy(projectile, 10f);   
+        }     
     }
 
 }
