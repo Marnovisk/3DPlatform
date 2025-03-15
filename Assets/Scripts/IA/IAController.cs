@@ -112,6 +112,7 @@ public class IAController : MonoBehaviour
 
         playerTransform = playerReference.transform;
     }
+    
 
     private void OnDestroy()
     {

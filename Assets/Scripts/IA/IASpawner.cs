@@ -6,6 +6,9 @@ public class IASpawner : MonoBehaviour
 {
     public EnemyScriptable[] EnemiesBrains;
     public GameObject EnemyPrefab;
+    public int enemyCount;
+
+    public bool canSpawn = true;
 
     private void Start()
     {
@@ -15,7 +18,14 @@ public class IASpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        var enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
-        enemy.GetComponent<IAController>().Init(EnemiesBrains[Random.Range(0,EnemiesBrains.Length)]);
+        if(canSpawn)
+        {
+            var enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
+            enemy.GetComponent<IAController>().Init(EnemiesBrains[Random.Range(0,EnemiesBrains.Length)]);
+            enemyCount += 1;
+        }
+        
     }
+
+    
 }
