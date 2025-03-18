@@ -10,6 +10,8 @@ public class XPScript : MonoBehaviour
 
     bool isReady = false;
 
+    public GameObject parentObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class XPScript : MonoBehaviour
         if (other.tag == "Player"){
 
             other.GetComponent<playerExpirience>().IncreaseXp(XPAmount);
-            Destroy(this.gameObject);
+            Destroy(parentObject);
         } 
 
         

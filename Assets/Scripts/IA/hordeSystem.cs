@@ -10,6 +10,8 @@ public class hordeSystem : MonoBehaviour
     public int enemySum;
     public int hordeCount = 10;
 
+    private bool isSpawning = true;
+
     // Start is called before the first frame update
     void Start()
     {        
@@ -28,7 +30,7 @@ public class hordeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemySum = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
         Debug.Log("Quantidade de inimigos: " + enemySum);
         if(enemySum >= hordeCount)
         {
@@ -39,13 +41,23 @@ public class hordeSystem : MonoBehaviour
             StartNewHorde();
         }
 
+        if(isSpawning)
+        {
+            enemySum = spawnerScripList[0].enemyCount * spawnerScripList.Count;
+        }else
+        {
+            enemySum = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        }
+            
+
     }
     
     void StopHorde()
     {
+        isSpawning = false;
         foreach(var spawner in spawnerScripList)
         {
-            spawner.canSpawn = false;            
+            spawner.canSpawn = false;                        
         }
         waitForNewHorde = true;
     }
@@ -56,8 +68,11 @@ public class hordeSystem : MonoBehaviour
         hordeCount += 10;
         foreach(var spawner in spawnerScripList)
         {
-            spawner.canSpawn = true;            
+            spawner.enemyCount = 0; 
+            spawner.canSpawn = true;  
         }
+
+        isSpawning = true;
         
     }
 }
