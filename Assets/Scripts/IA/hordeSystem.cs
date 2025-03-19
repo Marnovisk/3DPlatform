@@ -9,7 +9,7 @@ public class hordeSystem : MonoBehaviour
     private bool waitForNewHorde = false;
     public int enemySum;
     public int hordeCount = 10;
-
+    public int CurrentHorde = 1;
     private bool isSpawning = true;
 
     // Start is called before the first frame update
@@ -53,7 +53,7 @@ public class hordeSystem : MonoBehaviour
     }
     
     void StopHorde()
-    {
+    {    
         isSpawning = false;
         foreach(var spawner in spawnerScripList)
         {
@@ -64,15 +64,26 @@ public class hordeSystem : MonoBehaviour
 
     void StartNewHorde()
     {
-        waitForNewHorde = false;
-        hordeCount += 10;
-        foreach(var spawner in spawnerScripList)
-        {
-            spawner.enemyCount = 0; 
-            spawner.canSpawn = true;  
-        }
-
-        isSpawning = true;
         
+        if(CurrentHorde <= 3)
+        {
+            CurrentHorde += 1;
+            waitForNewHorde = false;
+            hordeCount += 10;
+            foreach(var spawner in spawnerScripList)
+            {
+                spawner.enemyCount = 0; 
+                spawner.canSpawn = true;  
+            }
+            isSpawning = true;   
+        }else
+        {
+            SpawnBoss();
+        }             
+    }
+
+    void SpawnBoss()
+    {
+        Debug.Log("Boss");
     }
 }
