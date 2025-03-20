@@ -1201,7 +1201,8 @@ MonoBehaviour:
   spawnerScripList: []
   enemySum: 0
   hordeCount: 10
-  CurrentHorde: 3
+  CurrentHorde: 2
+  totalHorde: 3
 --- !u!1 &598264149
 GameObject:
   m_ObjectHideFlags: 0

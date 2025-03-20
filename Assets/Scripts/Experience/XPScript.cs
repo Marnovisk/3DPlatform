@@ -35,7 +35,6 @@ public class XPScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collide");
         if (other.tag == "Player"){
 
             other.GetComponent<playerExpirience>().IncreaseXp(XPAmount);

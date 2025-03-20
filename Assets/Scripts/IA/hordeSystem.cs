@@ -10,6 +10,7 @@ public class hordeSystem : MonoBehaviour
     public int enemySum;
     public int hordeCount = 10;
     public int CurrentHorde = 1;
+    public int totalHorde = 3;
     private bool isSpawning = true;
 
     // Start is called before the first frame update
@@ -17,12 +18,10 @@ public class hordeSystem : MonoBehaviour
     {        
         for(int i = 0; i < 2; i++)
         {
-            Debug.Log("EnemyAdded");
              IASpawner spawnerScript = spawnerList[i].GetComponent<IASpawner>();    
               if (spawnerScript != null) 
                 {
                     spawnerScripList.Add(spawnerScript);
-                    Debug.Log("EnemyAdded: " + spawnerList[i].name);
                 }    
         }   
     }
@@ -30,8 +29,6 @@ public class hordeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Debug.Log("Quantidade de inimigos: " + enemySum);
         if(enemySum >= hordeCount)
         {
             StopHorde();
@@ -63,9 +60,8 @@ public class hordeSystem : MonoBehaviour
     }
 
     void StartNewHorde()
-    {
-        
-        if(CurrentHorde <= 3)
+    {        
+        if(CurrentHorde < totalHorde)
         {
             CurrentHorde += 1;
             waitForNewHorde = false;

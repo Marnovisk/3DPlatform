@@ -20,11 +20,14 @@ public class HordeCounterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HordaTotal.text != HordaScript.hordeCount.ToString())
+        if(HordaTotal.text != HordaScript.totalHorde.ToString())
         {
-            HordaTotal.SetText(HordaScript.hordeCount.ToString());
+            HordaTotal.SetText(HordaScript.totalHorde.ToString());
         }
         
-        HordaAtual.SetText(HordaScript.enemySum.ToString());
+        if(HordaAtual.text != HordaScript.CurrentHorde.ToString())
+        {
+            HordaAtual.SetText(HordaScript.CurrentHorde.ToString());
+        }
     }
 }

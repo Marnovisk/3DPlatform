@@ -31,7 +31,6 @@ public class CharacterStatusManager : MonoBehaviour, IDamagable
     }
     public void TakeDamage(int amount)
     {
-        Debug.Log("Tomando " + amount + " de dano");
 
         status.Health -= amount;
 

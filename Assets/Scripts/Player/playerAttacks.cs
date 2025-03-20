@@ -86,10 +86,9 @@ public class playerAttacks : MonoBehaviour
         float Cooldown = Weapons[0].AttackSpeed;
         if(Time.time >= Cooldown + shootCurrentCooldown)
         {
-            Debug.Log(Time.time);
            shootCurrentCooldown = Time.time;
-            var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
-            Destroy(projectile, 10f);  
+           var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
+           Destroy(projectile, 10f);  
         }      
     }
 
