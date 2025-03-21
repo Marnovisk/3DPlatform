@@ -71,8 +71,7 @@ public class playerAttacks : MonoBehaviour
                     bool isDamaged = enemyList.Contains(enemy);
                     if(!isDamaged)
                     {
-                        enemy.GetComponent<IDamagable>().TakeDamage(15);                                            
-                        Debug.Log("Enemy Hit");
+                        enemy.GetComponent<IDamagable>().TakeDamage(15);  
                     }                  
 
                     enemyList.Add(enemy);

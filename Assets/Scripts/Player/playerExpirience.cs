@@ -8,6 +8,8 @@ public class playerExpirience : MonoBehaviour
     public int NeededExpirience;
     public int currentExpirience;
 
+    public bool LevelUped;
+
     public void Awake()
     {
         //WeaponsScript = GetComponent<playerWeapons>();
@@ -17,7 +19,7 @@ public class playerExpirience : MonoBehaviour
     {
         currentExpirience = 0;
         NeededExpirience =+ 20;
-
+        LevelUped = true;
         //WeaponsScript.AddWeapon();
     }
 

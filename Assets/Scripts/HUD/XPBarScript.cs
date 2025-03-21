@@ -11,6 +11,9 @@ public class XPBarScript : MonoBehaviour
     public float XP;
     public GameObject player;
     private playerExpirience XPScript;
+    public GameObject playerHUD;
+
+    public GameObject upgradeHUD;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +29,10 @@ public class XPBarScript : MonoBehaviour
             XpBar.value = XP;
             XpBar.maxValue = XPScript.NeededExpirience;
         }
-
-        
-            
-        
+        if(XPScript.LevelUped)
+        {
+            upgradeHUD.gameObject.SetActive(true);
+            playerHUD.SetActive(false);
+        }      
     }
 }
