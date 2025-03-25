@@ -34,6 +34,8 @@ public class CharacterStatusManager : MonoBehaviour, IDamagable
 
         status.Health -= amount;
 
+        Debug.Log("Dano Tomado: " + amount);
+
         OnTakeDamage?.Invoke();
 
         //Anima Dano

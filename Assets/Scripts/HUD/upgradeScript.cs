@@ -12,6 +12,7 @@ public class upgradeScript : MonoBehaviour
     public GameObject player;
 
     private playerExpirience XPScript;
+    public List<Upgradecriptable> Upgrades;
     
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,16 @@ public class upgradeScript : MonoBehaviour
 
     }
 
-    public void FirstUpgrade()
+    public void FirstUpgrade(int index)
     {
         Debug.Log("UP1");
+
+        if (index < Upgrades.Count)
+        {
+            Upgrades[index].ApplyUpgrade(Upgrades[index].weapon);
+            Debug.Log($"Upgrade aplicado: {Upgrades[index].description}");
+        }
+
         playerHUD.SetActive(true);
         XPScript.LevelUped = false;
         this.gameObject.SetActive(false);
