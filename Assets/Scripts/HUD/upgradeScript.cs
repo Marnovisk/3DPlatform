@@ -13,12 +13,22 @@ public class upgradeScript : MonoBehaviour
 
     private playerExpirience XPScript;
     public List<Upgradecriptable> Upgrades;
+
+    public UpgradeWeapon _upgradeWeapon;
+
+    public enum UpgradeWeapon
+    {
+        Shoot,
+        Tornado,
+        Area
+    }
     
     // Start is called before the first frame update
     void Start()
     {
         XPScript = player.GetComponent<playerExpirience>();
         this.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -30,10 +40,12 @@ public class upgradeScript : MonoBehaviour
     public void FirstUpgrade(int index)
     {
         Debug.Log("UP1");
+        player.GetComponent<playerAttacks>().WeaponStarter();
+        var arma = player.GetComponent<playerAttacks>().Weapons[0];
 
         if (index < Upgrades.Count)
         {
-            Upgrades[index].ApplyUpgrade(Upgrades[index].weapon);
+            Upgrades[index].ApplyUpgrade(player);
             Debug.Log($"Upgrade aplicado: {Upgrades[index].description}");
         }
 

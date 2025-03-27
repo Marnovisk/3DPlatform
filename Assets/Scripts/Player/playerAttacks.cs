@@ -29,6 +29,15 @@ public class playerAttacks : MonoBehaviour
         aim = GetComponent<playerAim>();
     }
 
+    public void WeaponStarter()
+    {
+        Debug.Log("Arma Iniciada");
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            Weapons[i] = Instantiate(Weapons[i]);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -12,6 +12,7 @@ public class Upgradecriptable : ScriptableObject
 
     [Header("Info Data")]
     public string description;
+    public UpgradeWeapon _upgradeWeapon;
 
     public enum UpgradeType
     {
@@ -20,8 +21,30 @@ public class Upgradecriptable : ScriptableObject
         IncreaseAttackSpeed
     }
 
-    public void ApplyUpgrade(WeaponScriptable weapon)
+    public enum UpgradeWeapon
     {
+        Shoot,
+        Tornado,
+        Area
+    }
+
+
+    public void ApplyUpgrade(GameObject player)
+    {
+        var playerAttacks = player.GetComponent<playerAttacks>();        
+        switch(_upgradeWeapon)
+        {
+            case UpgradeWeapon.Shoot:
+                weapon = playerAttacks.Weapons[0];
+                break;
+            case UpgradeWeapon.Area:
+                weapon = playerAttacks.Weapons[1];
+                break;
+            case UpgradeWeapon.Tornado:
+                weapon = playerAttacks.Weapons[2];
+                break;    
+        }
+
         switch (upgradeType)
         {
             case UpgradeType.IncreaseDamage:
