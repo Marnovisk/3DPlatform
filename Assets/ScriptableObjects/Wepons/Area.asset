@@ -19,3 +19,4 @@ MonoBehaviour:
   currentCooldown: 0
   proj: {fileID: 8839069581014409377, guid: 68009dabf91c47745995126863f931ae, type: 3}
   type: 2
+  kind: 2
