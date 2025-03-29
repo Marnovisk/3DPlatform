@@ -25,6 +25,7 @@ public class ShootProjectile : Projectile, ITargetWeapon
     public void upgradeDamage(int DMGValue)
     {
         brain = Instantiate(brain);
+        var newBrains = brain;
         brain.Damage = DMGValue;
     }
 
