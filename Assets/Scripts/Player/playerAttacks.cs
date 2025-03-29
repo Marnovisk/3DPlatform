@@ -65,6 +65,12 @@ public class playerAttacks : MonoBehaviour
         {
             UseTornadoWeapon();
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Weapons[0].Damage += 10;
+            Debug.Log("Dano aumentado para: " +  Weapons[0].Damage);
+        }
     }
 
     void EnemyHit()
@@ -96,6 +102,7 @@ public class playerAttacks : MonoBehaviour
         {
            shootCurrentCooldown = Time.time;
            var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
+           projectile.GetComponent<ShootProjectile>().upgradeDamage(Weapons[0].Damage);
            Destroy(projectile, 10f);  
         }      
     }

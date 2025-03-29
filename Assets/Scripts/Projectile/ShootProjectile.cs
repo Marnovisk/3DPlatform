@@ -18,9 +18,14 @@ public class ShootProjectile : Projectile, ITargetWeapon
         base.Init();
         //target = ptarget;
         isReady = true;
-        
 
         Destroy(this.gameObject, 10f);
+    }
+
+    public void upgradeDamage(int DMGValue)
+    {
+        brain = Instantiate(brain);
+        brain.Damage = DMGValue;
     }
 
     // Update is called once per frame
