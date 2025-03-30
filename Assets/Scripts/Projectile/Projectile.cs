@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public WeaponScriptable brain;
+    public int DamageValue;
 
     public bool isReady = false;
 
@@ -13,5 +14,10 @@ public class Projectile : MonoBehaviour
     public virtual void Init(Transform target = null) { }
 
     public virtual void Update() { }
+
+    public virtual void upgradeDamage(int DMGValue)
+    {
+        DamageValue = DMGValue;
+    }
     
 }

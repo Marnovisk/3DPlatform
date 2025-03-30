@@ -32,6 +32,7 @@ public class XPBarScript : MonoBehaviour
         if(XPScript.LevelUped)
         {
             upgradeHUD.gameObject.SetActive(true);
+            upgradeHUD.GetComponent<upgradeScript>().SetUpgrades();
             playerHUD.SetActive(false);
         }      
     }

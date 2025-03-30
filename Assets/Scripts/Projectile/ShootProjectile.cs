@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShootProjectile : Projectile, ITargetWeapon
 {
+    
     public Transform target;
     public bool isContinuos;
 
@@ -21,14 +22,6 @@ public class ShootProjectile : Projectile, ITargetWeapon
 
         Destroy(this.gameObject, 10f);
     }
-
-    public void upgradeDamage(int DMGValue)
-    {
-        brain = Instantiate(brain);
-        var newBrains = brain;
-        brain.Damage = DMGValue;
-    }
-
     // Update is called once per frame
     public override void Update()
     {
@@ -50,7 +43,7 @@ public class ShootProjectile : Projectile, ITargetWeapon
 
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<IDamagable>().TakeDamage(brain.Damage);
+            other.gameObject.GetComponent<IDamagable>().TakeDamage(DamageValue);
 
             if(!isContinuos) Destroy(this.gameObject);
         }

@@ -18,7 +18,7 @@ public class playerExpirience : MonoBehaviour
     public void LevelUp()
     {
         currentExpirience = 0;
-        NeededExpirience =+ 20;
+        NeededExpirience += 20;
         LevelUped = true;
         //WeaponsScript.AddWeapon();
     }

@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c634ca0f671ff494b9e240633e819039, type: 3}
-  m_Name: Shoot
+  m_Script: {fileID: 11500000, guid: 959d5d7531fe17d44a3d75c4bc00d169, type: 3}
+  m_Name: AreaDMGUpgrade
   m_EditorClassIdentifier: 
-  Damage: 10
-  Range: 5
-  AttackSpeed: 0.5
-  projectileSpeed: 20
-  currentCooldown: 0
-  proj: {fileID: 195147205522388065, guid: 119adfd65c7823a4e8844469c55bb281, type: 3}
-  type: 0
-  kind: 0
+  value: 10
+  upgradeType: 0
+  description: Aumenta o dano do ataque em area
+  _upgradeWeapon: 2

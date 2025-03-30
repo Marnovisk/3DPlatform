@@ -8,39 +8,23 @@ public class Upgradecriptable : ScriptableObject
    [Header("Data")]
     public float value; 
     public UpgradeType upgradeType;
-    public WeaponScriptable weapon;
+    private WeaponScriptable weapon;
 
     [Header("Info Data")]
     public string description;
-    public UpgradeWeapon _upgradeWeapon;
-
-    public enum UpgradeType
-    {
-        IncreaseDamage,
-        IncreaseRange,
-        IncreaseAttackSpeed
-    }
-
-    public enum UpgradeWeapon
-    {
-        Shoot,
-        Tornado,
-        Area
-    }
-
-
+    public WeaponKind _upgradeWeapon;
     public void ApplyUpgrade(GameObject player)
     {
         var playerAttacks = player.GetComponent<playerAttacks>();        
         switch(_upgradeWeapon)
         {
-            case UpgradeWeapon.Shoot:
+            case WeaponKind.Shoot:
                 weapon = playerAttacks.Weapons[0];
                 break;
-            case UpgradeWeapon.Area:
+            case WeaponKind.Area:
                 weapon = playerAttacks.Weapons[1];
                 break;
-            case UpgradeWeapon.Tornado:
+            case WeaponKind.Tornado:
                 weapon = playerAttacks.Weapons[2];
                 break;    
         }

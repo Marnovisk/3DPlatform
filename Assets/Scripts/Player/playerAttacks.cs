@@ -27,6 +27,7 @@ public class playerAttacks : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         enemyList = new List<GameObject>();        
         aim = GetComponent<playerAim>();
+        WeaponStarter();
     }
 
     public void WeaponStarter()
@@ -102,7 +103,7 @@ public class playerAttacks : MonoBehaviour
         {
            shootCurrentCooldown = Time.time;
            var projectile = Instantiate(Weapons[0].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
-           projectile.GetComponent<ShootProjectile>().upgradeDamage(Weapons[0].Damage);
+           projectile.GetComponent<Projectile>().upgradeDamage(Weapons[0].Damage);
            Destroy(projectile, 10f);  
         }      
     }
@@ -114,6 +115,7 @@ public class playerAttacks : MonoBehaviour
         {
             areacurrentCooldown = Time.time;
             var projectile = Instantiate(Weapons[1].proj, aim.hit.point, Quaternion.LookRotation(this.transform.forward, this.transform.up)); 
+            projectile.GetComponent<Projectile>().upgradeDamage(Weapons[1].Damage);
             Destroy(projectile, 10f);
         }       
     }
@@ -125,6 +127,7 @@ public class playerAttacks : MonoBehaviour
         {
             tornadoCurrentCooldown = Time.time;
             var projectile = Instantiate(Weapons[2].proj, transform.position, Quaternion.LookRotation(this.transform.forward, this.transform.up));
+            projectile.GetComponent<Projectile>().upgradeDamage(Weapons[2].Damage);
             Destroy(projectile, 10f);   
         }     
     }

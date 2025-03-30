@@ -1175,19 +1175,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 491878964}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1884679673}
-        m_TargetAssemblyTypeName: upgradeScript, Assembly-CSharp
-        m_MethodName: ThirdUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &491878964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3118,7 +3106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea8c7bfae98a543a0bae0931037d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeededExpirience: 40
+  NeededExpirience: 10
   currentExpirience: 0
   LevelUped: 0
 --- !u!114 &1410386411
@@ -3584,19 +3572,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1569891364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1884679673}
-        m_TargetAssemblyTypeName: upgradeScript, Assembly-CSharp
-        m_MethodName: SecondUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &1569891364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,13 +4577,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df097b7408ede2f4d99039492c794e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up1BTN: {fileID: 1927142602}
-  up2BTN: {fileID: 1569891363}
-  up3BTN: {fileID: 491878963}
+  BTNList:
+  - {fileID: 1927142602}
+  - {fileID: 1569891363}
+  - {fileID: 491878963}
   playerHUD: {fileID: 46560157}
   player: {fileID: 1410386403}
   Upgrades:
   - {fileID: 11400000, guid: ca1ba829881804a46bb3a96fc135c89e, type: 2}
+  - {fileID: 11400000, guid: 96412feff7d0b9e4aa22f8618d566669, type: 2}
+  - {fileID: 11400000, guid: 88cd49ef00e1a5a4ea4d04e38feac087, type: 2}
+  _upgradeWeapon: 0
 --- !u!1 &1890499009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5037,19 +5017,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1927142603}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1884679673}
-        m_TargetAssemblyTypeName: upgradeScript, Assembly-CSharp
-        m_MethodName: FirstUpgrade
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &1927142603
 MonoBehaviour:
   m_ObjectHideFlags: 0
