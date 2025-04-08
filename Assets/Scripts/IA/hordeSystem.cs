@@ -6,12 +6,16 @@ public class hordeSystem : MonoBehaviour
 {
     public List<GameObject> spawnerList = new List<GameObject>();
     public List<IASpawner> spawnerScripList = new List<IASpawner>();
+    public Transform BossSpawn;
+    public GameObject Zeus;
+    public EnemyScriptable ZeusBrains;
     private bool waitForNewHorde = false;
     public int enemySum;
     public int hordeCount = 10;
     public int CurrentHorde = 1;
     public int totalHorde = 3;
     private bool isSpawning = true;
+    private bool BossOnScene = false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +84,12 @@ public class hordeSystem : MonoBehaviour
 
     void SpawnBoss()
     {
-        Debug.Log("Boss");
+        if(!BossOnScene)
+        {
+            var Boss = Instantiate(Zeus, BossSpawn.position, Quaternion.identity);
+            Boss.GetComponent<BossController>().Init(ZeusBrains);
+            BossOnScene = true;
+        }
+        
     }
 }

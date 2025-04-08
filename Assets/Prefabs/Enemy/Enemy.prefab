@@ -88,6 +88,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   GFXTransform: {fileID: 5055020363502629408}
   referencesOK: 0
+  XPPrefab: {fileID: 1833188234119654126, guid: 6037e3d768fde494a9de79a5a4b82eae, type: 3}
 --- !u!195 &2064007914020073986
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
     Health: 0
     Armor: 0
     MagicResist: 0
+  XP: {fileID: 1833188234119654126, guid: 6037e3d768fde494a9de79a5a4b82eae, type: 3}
 --- !u!114 &110043262829679379
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class areaProjectile : Projectile, ITargetWeapon
 
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<IDamagable>().TakeDamage(brain.Damage);
+            other.gameObject.GetComponent<IDamagable>().TakeDamage(DamageValue);
         }
         
     }

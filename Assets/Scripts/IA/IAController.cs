@@ -24,6 +24,8 @@ public class IAController : MonoBehaviour
 
     [Header("References Check")]
     [SerializeField] private bool referencesOK;
+
+    public GameObject XPPrefab;
     
     private void Start()
     {

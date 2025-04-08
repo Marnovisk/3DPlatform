@@ -1241,6 +1241,7 @@ Transform:
   m_Children:
   - {fileID: 1774115623}
   - {fileID: 911331215}
+  - {fileID: 1026053850}
   m_Father: {fileID: 1436235770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &522777326
@@ -1259,6 +1260,9 @@ MonoBehaviour:
   - {fileID: 1774115622}
   - {fileID: 911331214}
   spawnerScripList: []
+  BossSpawn: {fileID: 1026053850}
+  Zeus: {fileID: 4530684136152285373, guid: 4b2cf547336640f4f801152678c3a6cd, type: 3}
+  ZeusBrains: {fileID: 11400000, guid: 1d8736b8c62b5b44ba48bf8bfa79da78, type: 2}
   enemySum: 0
   hordeCount: 10
   CurrentHorde: 1
@@ -2410,6 +2414,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1026053849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026053850}
+  m_Layer: 0
+  m_Name: BossSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1026053850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026053849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 522777325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042050718
 GameObject:
   m_ObjectHideFlags: 0

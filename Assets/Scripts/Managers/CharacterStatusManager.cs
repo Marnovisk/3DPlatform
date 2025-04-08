@@ -10,6 +10,8 @@ public class CharacterStatusManager : MonoBehaviour, IDamagable
     public Status status;
     public event Action OnTakeDamage;
 
+    public GameObject XP;
+
     private void Start()
     {
         
@@ -50,6 +52,7 @@ public class CharacterStatusManager : MonoBehaviour, IDamagable
 
     public void Die()
     {
+        Instantiate(XP, transform.position, Quaternion.identity);     
         Destroy(this.gameObject);
     }
 }

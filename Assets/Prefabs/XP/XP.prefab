@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74b49aa2876c1942a4650da515da885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XPAmount: 0
+  XPAmount: 10
   parentObject: {fileID: 1833188234119654126}
 --- !u!1 &9222147300749585251
 GameObject:

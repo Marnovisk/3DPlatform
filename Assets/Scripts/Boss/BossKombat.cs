@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class IAKombat : MonoBehaviour
+public class BossKombat : MonoBehaviour
 {
+
     [Header("MainData")]
     private EnemyScriptable brain;
 
     [Header("Attack Info")]
     [SerializeField] private bool canAttack;
     [SerializeField] private float currentAttackCooldown;
+    public WeaponScriptable Weapon;
 
     private NavMeshAgent nav;
 
@@ -19,11 +20,10 @@ public class IAKombat : MonoBehaviour
     {
         brain = pBrain;
         nav = GetComponent<NavMeshAgent>();
-        nav.stoppingDistance = brain.AttackRange;
     }
-   public bool checkAndAttack(Transform target)
+
+    public bool checkAndAttack(Transform target)
     {
-        CooldownRecovery();
         if(Vector3.Distance(this.transform.position, target.transform.position) <= brain.AttackRange){
             
             if(canAttack)
@@ -36,22 +36,12 @@ public class IAKombat : MonoBehaviour
         } 
 
         return false;
-
-    }
-
-    public void CooldownRecovery()
-    {
-        currentAttackCooldown -= Time.deltaTime;
-                if (currentAttackCooldown <= 0)
-                {
-                    canAttack = true;
-                    currentAttackCooldown = brain.AttackSpeed;
-                }
     }
 
     void Attack(Transform target)
     {
         canAttack = false;
-        target.GetComponent<IDamagable>().TakeDamage(Random.Range(brain.AttackDamage[0],brain.AttackDamage[1]));        
+        Instantiate(Weapon.proj,target);
+        //target.GetComponent<IDamagable>().TakeDamage(Random.Range(brain.AttackDamage[0],brain.AttackDamage[1]));        
     }
 }
