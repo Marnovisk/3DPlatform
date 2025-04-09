@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
@@ -9,11 +10,12 @@ public class LevelSelector : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(false);
-    }
+    }   
 
     // Update is called once per frame
     public void GoToLevel()
     {
-         SceneManager.LoadScene("SampleScene");
+        Debug.Log("Botão clicado!");
+        SceneManager.LoadScene("SampleScene");
     }
 }

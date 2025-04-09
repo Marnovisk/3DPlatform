@@ -13,7 +13,7 @@ public class BossKombat : MonoBehaviour
     [SerializeField] private bool canAttack;
     [SerializeField] private float currentAttackCooldown;
     public WeaponScriptable Weapon;
-    private float AttackTime = 2f;
+    private float AttackTime = 0f;
 
     private NavMeshAgent nav;
 
@@ -25,19 +25,27 @@ public class BossKombat : MonoBehaviour
 
     public bool checkAndAttack(Transform target)
     {
-        // if(Vector3.Distance(this.transform.position, target.transform.position) <= brain.AttackRange)
-        // {    
-        //     Attack(target);
-        //     return true;
-        // } 
-        float Cooldown = 1f;
-        if(Time.time >= Cooldown + AttackTime)
+        if (target == null) return false;
+
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        if (distance <= brain.AttackRange && Time.time >= AttackTime + brain.AttackSpeed)
         {
             AttackTime = Time.time;
             Attack(target);
+            return true;
         }
-        
+
         return false;
+        
+        // float Cooldown = 1f;
+        // if(Time.time >= Cooldown + AttackTime)
+        // {
+        //     AttackTime = Time.time;
+        //     Attack(target);
+        // }
+        
+        // return false;
     }
 
     void Attack(Transform target)

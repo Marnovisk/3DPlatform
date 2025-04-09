@@ -10,7 +10,10 @@ public class PhaseScript : MonoBehaviour
         if (other.tag == "Player")
         {
             if(Input.GetKeyDown(KeyCode.E))
+            {
                 LevelSelectorHUD.SetActive(true);
+                //LevelSelectorHUD.GetComponent<LevelSelector>().BTNSetup();
+            }                
         }         
     }
 

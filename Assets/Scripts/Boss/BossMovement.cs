@@ -8,11 +8,15 @@ public class BossMovement : MonoBehaviour
     private NavMeshAgent nav;
     public List<Transform> MovePositions;
     public List<Vector3> MPositions;
+
+    private EnemyScriptable zeusBrain;
+
     private Vector3 Position1 = new Vector3(4,2,5);
     private Vector3 Position2 = new Vector3(-5,2,5);
     private Vector3 Position3 = new Vector3(0,0,0);
 
-    private float MoveTime = 2f;
+    private float MoveTime = 0f;
+    private float Cooldown = 3f;
 
     void Awake()
     {
@@ -22,6 +26,7 @@ public class BossMovement : MonoBehaviour
     public void Init(EnemyScriptable brain)
     {
         nav.speed = brain.speed;
+        zeusBrain = brain;
         MPositions.Add(Position1);
         MPositions.Add(Position2);
         MPositions.Add(Position3);
@@ -29,25 +34,31 @@ public class BossMovement : MonoBehaviour
 
     public bool BossMove(Transform target)
     {
-        if(!target) return false;
-        // if(Vector3.Distance(transform.position, target.position) > nav.stoppingDistance)
-        // {
-            //nav.SetDestination(MovePositions[Random.Range(0,1)].position);
-            float Cooldown = 3f;            
-            if(Time.time >= Cooldown + MoveTime)
+        if(!target) return false;   
+
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        if (distance > nav.stoppingDistance)
+        {
+            if (Time.time >= MoveTime + Cooldown)
             {
                 MoveTime = Time.time;
-                this.gameObject.transform.position = MPositions[Random.Range(0,2)];
+                Vector3 nextPosition = MPositions[Random.Range(0, MPositions.Count)];
+                this.gameObject.transform.position = nextPosition;
                 Debug.Log("Movendo");
             }
-            
-            return false;
-        // }
-        // else
+
+            return true;
+        }
+
+        // if(Time.time >= Cooldown + MoveTime)
         // {
-        //     return false;
+        //     MoveTime = Time.time;
+        //     this.gameObject.transform.position = MPositions[Random.Range(0,2)];
+        //     Debug.Log("Movendo");
         // }
         
+        return false;        
     }
     
 }

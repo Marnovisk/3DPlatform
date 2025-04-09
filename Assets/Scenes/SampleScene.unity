@@ -1265,7 +1265,7 @@ MonoBehaviour:
   ZeusBrains: {fileID: 11400000, guid: 1d8736b8c62b5b44ba48bf8bfa79da78, type: 2}
   enemySum: 0
   hordeCount: 10
-  CurrentHorde: 1
+  CurrentHorde: 3
   totalHorde: 3
 --- !u!1 &598264149
 GameObject:

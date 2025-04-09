@@ -42,26 +42,23 @@ public class BossController : MonoBehaviour
     }
     void Update()
     {
-        if (referencesOK == false) return;
-        if(playerTransform == null) return;
+        if (referencesOK == false || playerTransform == null) return;
+        
 
-        if(IAStatesScript.States == IAStateType.CHASING)
+        switch (IAStatesScript.States)
         {
-            MoveBehavior();
-            return;
-        }
+            case IAStateType.CHASING:
+                MoveBehavior();
+                break;
 
-        if(IAStatesScript.States == IAStateType.ATTACKING)
-        {
-            AttackBehavior();
-            return;
+            case IAStateType.ATTACKING:
+                AttackBehavior();
+                break;
         }
     }
 
     void MoveBehavior()
     {
-        if (playerTransform == null) return;
-        if (BossMovimentScript == null) return;
         var sucess = BossMovimentScript.BossMove(playerTransform);
 
         if(sucess == false)
