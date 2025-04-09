@@ -10,7 +10,7 @@ public class BossKombat : MonoBehaviour
     private EnemyScriptable brain;
 
     [Header("Attack Info")]
-    [SerializeField] private bool canAttack;
+    //[SerializeField] private bool canAttack;
     [SerializeField] private float currentAttackCooldown;
     public WeaponScriptable Weapon;
     private float AttackTime = 0f;
@@ -50,7 +50,7 @@ public class BossKombat : MonoBehaviour
 
     void Attack(Transform target)
     {
-        canAttack = false;
+        //canAttack = false;
         Instantiate(Weapon.proj,target.position,Quaternion.identity);
         Debug.Log("Atacando");
         //target.GetComponent<IDamagable>().TakeDamage(Random.Range(brain.AttackDamage[0],brain.AttackDamage[1]));        

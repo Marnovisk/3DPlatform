@@ -43,8 +43,9 @@ public class BossMovement : MonoBehaviour
             if (Time.time >= MoveTime + Cooldown)
             {
                 MoveTime = Time.time;
-                Vector3 nextPosition = MPositions[Random.Range(0, MPositions.Count)];
-                this.gameObject.transform.position = nextPosition;
+                nav.SetDestination(target.position);
+                //Vector3 nextPosition = MPositions[Random.Range(0, MPositions.Count)];
+                //this.gameObject.transform.position = nextPosition;
                 Debug.Log("Movendo");
             }
 
