@@ -47,7 +47,7 @@ public class BossController : MonoBehaviour
 
         if(IAStatesScript.States == IAStateType.CHASING)
         {
-            ChaseBehavior();
+            MoveBehavior();
             return;
         }
 
@@ -58,12 +58,10 @@ public class BossController : MonoBehaviour
         }
     }
 
-    void ChaseBehavior()
+    void MoveBehavior()
     {
         if (playerTransform == null) return;
         if (BossMovimentScript == null) return;
-
-
         var sucess = BossMovimentScript.BossMove(playerTransform);
 
         if(sucess == false)
