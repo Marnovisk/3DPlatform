@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5417167971946804920}
   m_Layer: 0
   m_Name: Zeus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -270,10 +270,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    Health: 0
+    Health: 10
     Armor: 0
     MagicResist: 0
-  XP: {fileID: 0}
+  XP: {fileID: 7929196405703349133, guid: 1ab4eee1c1561774c8eb4d89a51883b3, type: 3}
 --- !u!1 &7541140023405461619
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c634ca0f671ff494b9e240633e819039, type: 3}
   m_Name: ZeusWeapon
   m_EditorClassIdentifier: 
-  Damage: 0
+  Damage: 15
   Range: 0
   AttackSpeed: 2
   projectileSpeed: 0

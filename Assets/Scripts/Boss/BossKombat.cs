@@ -37,22 +37,14 @@ public class BossKombat : MonoBehaviour
         }
 
         return false;
-        
-        // float Cooldown = 1f;
-        // if(Time.time >= Cooldown + AttackTime)
-        // {
-        //     AttackTime = Time.time;
-        //     Attack(target);
-        // }
-        
-        // return false;
     }
 
     void Attack(Transform target)
     {
         //canAttack = false;
-        Instantiate(Weapon.proj,target.position,Quaternion.identity);
+        var projectile = Instantiate(Weapon.proj,target.position,Quaternion.identity);
+        projectile.GetComponent<Projectile>().upgradeDamage(Weapon.Damage);
         Debug.Log("Atacando");
-        //target.GetComponent<IDamagable>().TakeDamage(Random.Range(brain.AttackDamage[0],brain.AttackDamage[1]));        
+        Destroy(projectile, 2f);      
     }
 }
