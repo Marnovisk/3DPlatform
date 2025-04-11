@@ -42,8 +42,19 @@ public class BossKombat : MonoBehaviour
     void Attack(Transform target)
     {
         //canAttack = false;
-        var projectile = Instantiate(Weapon.proj,target.position,Quaternion.identity);
+        Vector3 targetPosition = target.position;
+        Vector3 spawnPosition = transform.position + transform.forward * 1.5f + Vector3.up * 1f;
+
+        var projectile = Instantiate(Weapon.proj,spawnPosition,Quaternion.identity);
         projectile.GetComponent<Projectile>().upgradeDamage(Weapon.Damage);
+
+        BossProjectile bossProj = projectile.GetComponent<BossProjectile>();
+        if (bossProj != null)
+        {
+            bossProj.SetTargetPosition(targetPosition);
+            bossProj.Init(target);
+        }
+
         Debug.Log("Atacando");
         Destroy(projectile, 2f);      
     }
