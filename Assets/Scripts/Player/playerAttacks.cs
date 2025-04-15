@@ -7,6 +7,7 @@ public class playerAttacks : MonoBehaviour
 {
     //private Rigidbody rb;s
     public GameObject PlayerWeapon;
+    public Animator mAnimator;
     float areacurrentCooldown = 0;
     float tornadoCurrentCooldown = 0;
     float shootCurrentCooldown = 0;
@@ -27,6 +28,7 @@ public class playerAttacks : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         enemyList = new List<GameObject>();        
         aim = GetComponent<playerAim>();
+        mAnimator = GetComponentInChildren<Animator>();
         WeaponStarter();
     }
 
@@ -44,12 +46,18 @@ public class playerAttacks : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
+            mAnimator.SetBool("AttackTrigger", true);            
+        }
+
+        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 2.15f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
             EnemyHit();
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.10f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             enemyList.Clear();
+            Debug.Log("Lista Limpa");
         }
 
         if(Input.GetMouseButtonDown(1))
@@ -76,24 +84,35 @@ public class playerAttacks : MonoBehaviour
 
     void EnemyHit()
     {
+        //Debug.Log("Esta atacando");
+
         ray = new Ray(PlayerWeapon.transform.position, transform.forward);
-            RaycastHit hit;
+        RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit , 5.0f))
+        
+
+        if(Physics.Raycast(ray, out hit , 2.5f))
+        {
+            if (hit.collider.CompareTag("Enemy"))
             {
-                if (hit.collider.CompareTag("Enemy"))
+                enemy = hit.transform.gameObject;
+                bool isDamaged = enemyList.Contains(enemy);
+                if(!isDamaged)
                 {
-                    enemy = hit.transform.gameObject;
-                    bool isDamaged = enemyList.Contains(enemy);
-                    if(!isDamaged)
-                    {
-                        enemy.GetComponent<IDamagable>().TakeDamage(15);  
-                    }                  
+                    enemy.GetComponent<IDamagable>().TakeDamage(15);  
+                }                  
 
-                    enemyList.Add(enemy);
-                }               
-            }            
-            Debug.DrawRay(ray.origin, ray.direction * 5.0f , Color.red);
+                enemyList.Add(enemy);
+            }               
+        }            
+        Debug.DrawRay(ray.origin, ray.direction * 2.5f , Color.red);
+        mAnimator.SetBool("AttackTrigger", false);
+
+        // if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.10f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        // {
+        //     mAnimator.SetBool("AttackTrigger", false);
+        // }
+        
     }
 
     public void UseshootWeapon()

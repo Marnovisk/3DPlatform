@@ -6,7 +6,7 @@ public class BossProjectile : Projectile, ITargetWeapon
 {
     public Transform target;
     private Vector3 targetPosition;
-    public float speed = 1f;
+    public float speed = 15f;
 
     // Start is called before the first frame update
     public override void Init(Transform ptarget)

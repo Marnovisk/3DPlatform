@@ -122,3 +122,4 @@ MonoBehaviour:
   DamageValue: 0
   isReady: 0
   target: {fileID: 0}
+  speed: 10
