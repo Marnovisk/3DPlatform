@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class playerAttacks : MonoBehaviour
 {
-    //private Rigidbody rb;
-
+    //private Rigidbody rb;s
+    public GameObject PlayerWeapon;
     float areacurrentCooldown = 0;
     float tornadoCurrentCooldown = 0;
     float shootCurrentCooldown = 0;
@@ -76,7 +76,7 @@ public class playerAttacks : MonoBehaviour
 
     void EnemyHit()
     {
-        ray = new Ray(this.transform.position, transform.forward);
+        ray = new Ray(PlayerWeapon.transform.position, transform.forward);
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit , 5.0f))
