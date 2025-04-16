@@ -49,12 +49,12 @@ public class playerAttacks : MonoBehaviour
             mAnimator.SetBool("AttackTrigger", true);            
         }
 
-        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 2.15f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 2.10f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             EnemyHit();
         }
 
-        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.10f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.15f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             enemyList.Clear();
             Debug.Log("Lista Limpa");
@@ -105,7 +105,7 @@ public class playerAttacks : MonoBehaviour
                 enemyList.Add(enemy);
             }               
         }            
-        Debug.DrawRay(ray.origin, ray.direction * 2.5f , Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * 2.0f , Color.red);
         mAnimator.SetBool("AttackTrigger", false);
 
         // if(mAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.10f && mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
